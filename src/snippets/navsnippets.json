@@ -1,0 +1,232 @@
+{
+  "RN Generator Screen": {
+    "prefix": "rngScreen",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import { View, Text } from 'react-native';",
+      "",
+      "export default class MyScreen extends Component {",
+      "  constructor(props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      loading: true,",
+      "    };",
+      "  }",
+      "",
+      "  componentDidMount() {",
+      "  }",
+      "",
+      "   render() {",
+      "     return (",
+      "       <View style={{ flex: 1 }}>",
+      "         <Text>MyScreen</Text>",
+      "       </View>",
+      "     );",
+      "   }",
+      "}"
+    ],
+    "description": "Default Screen React Native"
+  },
+  "RN Generator Pure Screen": {
+    "prefix": "rngpScreen",
+    "body": [
+      "import React, { PureComponent } from 'react';",
+      "import { View, Text } from 'react-native';",
+      "",
+      "export default class MyScreen extends PureComponent {",
+      "  constructor(props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      loading: true,",
+      "    };",
+      "  }",
+      "",
+      "  componentDidMount() {",
+      "  }",
+      "",
+      "   render() {",
+      "     return (",
+      "       <View style={{ flex: 1 }}>",
+      "         <Text>MyScreen</Text>",
+      "       </View>",
+      "     );",
+      "   }",
+      "}"
+    ],
+    "description": "Default Pure Screen React Native"
+  },
+  "RN Generator Modal": {
+    "prefix": "rngModal",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import { View, Modal } from 'react-native';",
+      "",
+      "export default class MyModal extends Component {",
+      "  constructor(props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      visible: false",
+      "    };",
+      "  }",
+      "",
+      "  onRequestClose() {",
+      "    this.setState({",
+      "      visible: false",
+      "    });",
+      "  }",
+      "",
+      "  onOpen() {",
+      "    this.setState({",
+      "      visible: true",
+      "    });",
+      "  }",
+      "",
+      "  onClose() {",
+      "    this.setState({",
+      "      visible: false",
+      "    });",
+      "  }",
+      "",
+      "  renderBody() {",
+      "    return (",
+      "      <View style={{ flex: 1 }}>",
+      "",
+      "      </View>",
+      "    );",
+      "  }",
+      "",
+      "  render() {",
+      "    const { visible } = this.state;",
+      "    return (",
+      "      <Modal",
+      "        animationType='fade'",
+      "        transparent={true}",
+      "        visible={visible}",
+      "        onRequestClose={() => this.onRequestClose()}",
+      "      >",
+      "        {this.renderBody()}",
+      "      </Modal>",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Default Modal React Native"
+  },
+  "RN Generator GET Method": {
+    "prefix": "rngGET",
+    "body": [
+      "getData() {",
+      "  const url = '';",
+      "  fetch(url, {",
+      "    method: 'GET',",
+      "    headers: {",
+      "      'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,image/webp,*/*;q=0.8',",
+      "      'Content-Type': 'application/json',",
+      "    },",
+      "  })",
+      "    .then((response) => response.json())",
+      "    .then((responseJson) => {",
+      "       // Do something with responseJson",
+      "       console.log(responseJson)",
+      "    })",
+      "    .catch((error) => {",
+      "      console.log(error);",
+      "    });",
+      "}"
+    ],
+    "description": "Default Function Method GET"
+  },
+  "RN Generator POST Method": {
+    "prefix": "rngPOST",
+    "body": [
+      "postData(data) {",
+      "  const url = '';",
+      "  const dataPost = JSON.stringify(data);",
+      "  fetch(url, {",
+      "    method: 'POST',",
+      "    headers: {",
+      "      'Accept': 'text/html,application/xhtml+xml,application/xml,application/json;q=0.9,image/webp,*/*;q=0.8',",
+      "      'Content-Type': 'application/json',",
+      "    },",
+      "    body: dataPost",
+      "  })",
+      "    .then((response) => response.json())",
+      "    .then((responseJson) => {",
+      "      runInAction(() => {",
+      "         // Do something with responseJson",
+      "         console.log(responseJson)",
+      "      });",
+      "    })",
+      "    .catch((error) => {",
+      "      console.log(error);",
+      "    });",
+      "}"
+    ],
+    "description": "Default Function Method POST"
+  },
+  "RN Generator Flatlist": {
+    "prefix": "rngFlatList",
+    "body": [
+      "<FlatList",
+      "  ref={c => { this.flatList = c; }}",
+      "  style={{ flex: 1 }}",
+      "  keyboardShouldPersistTaps={'always'}",
+      "  enableEmptySections",
+      "  data={this.state.data}",
+      "  keyExtractor={(item) => item.id.toString()}",
+      "  renderItem={({ item, index }) => this.renderItem(item, index)}",
+      "  // ListEmptyComponent={() => <EmptyComponent />}",
+      "  // refreshControl={",
+      "  //   <RefreshControl",
+      "  //     refreshing={this.state.refreshing}",
+      "  //     onRefresh={() => this.onRefresh()}",
+      "  //   />",
+      "  // }",
+      "/>"
+    ],
+    "description": "Default FlatList React Native"
+  },
+  "RN Generator Style Center": {
+    "prefix": "rngStyleCenter",
+    "body": [
+      "alignItems: 'center', justifyContent: 'center'"
+    ],
+    "description": "Default Style Center"
+  },
+  "RN Generator Default View": {
+    "prefix": "rngView",
+    "body": [
+      "<View style={{}}>",
+      "",
+      "</View>"
+    ],
+    "description": "Default View"
+  },
+  "RN Generator Default TouchableOpacity": {
+    "prefix": "rngTouchableOpacity",
+    "body": [
+      "<TouchableOpacity",
+      "  onPress={() => { }}",
+      "  style={{}}>",
+      "",
+      "</TouchableOpacity>"
+    ],
+    "description": "Default TouchableOpacity"
+  },
+  "RN Generator Default ReceiveProps": {
+    "prefix": "rngReceiveProps",
+    "body": [
+      "componentWillReceiveProps(nextProps) {",
+      "   this.setState({})",
+      "}"
+    ],
+    "description": "Default ReceiveProps"
+  },
+  "RN Generator Default Border": {
+    "prefix": "rngBorderStyle",
+    "body": [
+      "borderWidth: 1, borderColor: '#ccc', borderRadius: 5"
+    ],
+    "description": "Default Border Radius"
+  }
+}

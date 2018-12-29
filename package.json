@@ -8,6 +8,10 @@
     "engines": {
         "vscode": "^1.30.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chudaotrucnhan/rn-generator"
+      },
     "categories": [
         "Other",
         "Snippets"
