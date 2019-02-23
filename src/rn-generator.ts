@@ -17,8 +17,15 @@ export class RNGenerator implements IDisposable {
     { folderName: 'configs', files: ['AppConfig', 'AppConstant'] },
     { folderName: 'screens', files: ['MainScreen'] },
     { folderName: 'utils', files: ['AppHelper'] },
-    { folderName: 'navigation', files: ['AppNavigator'] }
+    { folderName: 'navigation', files: ['AppNavigator'] },
+    { folderName: 'images', files: [] },
+    { folderName: 'components', files: [] }
   ];
+
+  private readonly moduleFiles = [
+    { folderName: 'screens', files: ['MyScreen'] },
+    { folderName: 'components', files: [] },
+  ]
 
   constructor(
     private workspaceRoot: string,
@@ -34,8 +41,11 @@ export class RNGenerator implements IDisposable {
     }
 
     try {
-      if (rnname === 'project') {
+      if (rnname === 'prj') {
         this.createProject(rnname);
+      // } 
+      // else if (rnname.indexOf('src/') > -1 && rnname.indexOf('rng') > -1) {
+      //   this.createModule(rnname);
       } else {
         this.createFolder(rnname);
       }
@@ -52,7 +62,7 @@ export class RNGenerator implements IDisposable {
     // this can be abstracted out as an argument for prompt
     const options: InputBoxOptions = {
       ignoreFocusOut: true,
-      prompt: `RN name: 'some_rn', or a relative path: 'src/some_rn'`,
+      prompt: `RN name: 'project' => Generate project in src, 'folder_name', or a relative path: 'src/folder_name'`,
       placeHolder: 'project',
       validateInput: this.validate
     };
@@ -65,7 +75,17 @@ export class RNGenerator implements IDisposable {
       let absoluteRNPath: string = this.toAbsolutePath(Object(obj)["folderName"]);
       this.createFile(absoluteRNPath, Object(obj)["files"]);
     });
-    this.window.showInformationMessage(`RN: '${rnname}' successfully created`);
+    this.window.showInformationMessage(`RN: '${rnname}' successfully created!`);
+  }
+
+  createModule(rnname: string) {
+    const arr: string[] = rnname.split('/');
+    
+    this.moduleFiles.forEach((obj: object) => {
+      let absoluteRNPath: string = this.toAbsoluteDynamicPath(Object(obj)["folderName"], rnname);
+      this.createFile(absoluteRNPath, Object(obj)["files"]);
+    });
+    this.window.showInformationMessage(`RN: 'module successfully created!`)
   }
 
   createFolder(folderName: string) {
@@ -121,6 +141,13 @@ export class RNGenerator implements IDisposable {
       return path.resolve(this.workspaceRoot, nameOrRelativePath);
     }
     return path.resolve(this.workspaceRoot, this.defaultPath, nameOrRelativePath);
+  }
+
+  toAbsoluteDynamicPath(namePath: string, pathDynamic: string): string {
+    if (/\/|\\/.test(namePath)) {
+      return path.resolve(this.workspaceRoot, namePath);
+    }
+    return path.resolve(this.workspaceRoot, pathDynamic, namePath);
   }
 
   dispose(): void {
