@@ -21,3 +21,5 @@ In order to install an extension you need to launch the Command Pallete (Ctrl + 
     rngTouchableOpacity    Default TouchableOpacity
     rngReceiveProps        Default ReceiveProps
     rngBorderStyle         Default Border Radius
+    rngag                  Method axios GET
+    rngap                  Method axios POST

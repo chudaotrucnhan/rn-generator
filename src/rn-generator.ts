@@ -79,7 +79,7 @@ export class RNGenerator implements IDisposable {
   }
 
   createModule(rnname: string) {
-    const arr: string[] = rnname.split('/');
+    // const arr: string[] = rnname.split('/');
     
     this.moduleFiles.forEach((obj: object) => {
       let absoluteRNPath: string = this.toAbsoluteDynamicPath(Object(obj)["folderName"], rnname);

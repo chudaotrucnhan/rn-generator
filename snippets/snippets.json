@@ -228,5 +228,54 @@
       "borderWidth: 1, borderColor: '#ccc', borderRadius: 5"
     ],
     "description": "Default Border Radius"
+  },
+  "RN Generator Axios Get": {
+    "prefix": "rngag",
+    "body": [
+      "const url = ``;",
+      "axios({",
+      "  url,",
+      "  method: 'get',",
+      "  headers: {",
+      "    'Content-Type': 'application/json'",
+      "  }",
+      "})",
+      "  .then(response => {",
+      "    if (response) {",
+      "      //",
+      "    }",
+      "  })",
+      "  .catch(err => {",
+      "    console.log(err);",
+      "  });"
+    ],
+    "description": "Method axios GET"
+  },
+  "RN Generator Axios Post": {
+    "prefix": "rngap",
+    "body": [
+      "const url = ``;",
+      "axios({",
+      "  url,",
+      "  method: 'post',",
+      "  data: {",
+      "    // content data post",
+      "  },",
+      "  config: {",
+      "    headers: {",
+      "      'Content-Type': 'application/json'",
+      "    }",
+      "  }",
+      "})",
+      "  .then((response) => {",
+      "    if (response) {",
+      "      //",
+      "    }",
+      "  })",
+      "  .catch((err) => {",
+      "    console.log(err);",
+      "  });"
+    ],
+    "description": "Method axios POST"
   }
 }
