@@ -277,5 +277,154 @@
       "  });"
     ],
     "description": "Method axios POST"
+  },
+  "RN Generator View Keyboard": {
+    "prefix": "rngvk",
+    "body": [
+      "<ViewKeyboard",
+      "//    keyboardVerticalOffset={0} <= use for modal",
+      "//    behavior={Platform.OS === 'android' ? 'position' : 'padding'} <= use for modal",
+      ">",
+      "    {this.renderBody()}",
+      "</ViewKeyboard>"
+    ],
+    "description": "View auto height keyboard"
+  },
+  "RN Generator Form Field": {
+    "prefix": "rngff",
+    "body": [
+      "<FormField",
+      "  ref={c => { this.formField = c; }}",
+      "  buttons={buttons}",
+      "  model={this.data}",
+      "  defaults={this.defaults}",
+      "  initialValues={this.initData}",
+      "  style={{}}>",
+      "</FormField>"
+    ],
+    "description": "Idtek core mobile FormField"
+  },
+  "RN Generator TextField": {
+    "prefix": "rngtf",
+    "body": [
+      "<TextField",
+      "  name=''",
+      "//  validate={CoreHelper.isValueNull}",
+      "/>"
+    ],
+    "description": "Idtek core mobile TextField"
+  },
+  "RN Generator RadioFiled": {
+    "prefix": "rngrf",
+    "body": [
+      "<RadioFiled",
+      "  name=''",
+      "//  validate={CoreHelper.chooseOne}",
+      "  flexDirection='row' />"
+    ],
+    "description": "Idtek core mobile RadioField"
+  },
+  "RN Generator CheckboxField": {
+    "prefix": "rngcf",
+    "body": [
+      "<CheckboxField",
+      "  name=''",
+      "//  validate={CoreHelper.chooseOneArrayObject}",
+      "/>"
+    ],
+    "description": "Idtek core mobile CheckboxField"
+  },
+  "RN Generator DropdownField": {
+    "prefix": "rngdf",
+    "body": [
+      "<DropdownField",
+      "  name=''",
+      "  validate={CoreHelper.chooseOne}",
+      "/>"
+    ],
+    "description": "Idtek core mobile DropdownField"
+  },
+  "RN Generator DropdownMultiField": {
+    "prefix": "rngdmf",
+    "body": [
+      "<DropdownMultiField",
+      "  name=''",
+      "//  validate={CoreHelper.chooseOneArrayObject}",
+      "/>"
+    ],
+    "description": "Idtek core mobile DropdownMultiField"
+  },
+  "RN Generator DatePickerField": {
+    "prefix": "rngdpf",
+    "body": [
+      "<DatePickerField",
+      "  name=''",
+      "//  validate={CoreHelper.isValueNull}",
+      "/>"
+    ],
+    "description": "Idtek core mobile DatePickerField"
+  },
+  "RN Generator DateRangeField": {
+    "prefix": "rngdrf",
+    "body": [
+      "<DateRangeField",
+      "  name=''",
+      "//  validate={CoreHelper.chooseStartEndDate}",
+      "/>"
+    ],
+    "description": "Idtek core mobile DateRangeField"
+  },
+  "RN Generator DateTimeRangeField": {
+    "prefix": "rngdtrf",
+    "body": [
+      "<DateTimeRangeField",
+      "  name=''",
+      "//  validate={dayMinMax} ",
+      "/>"
+    ],
+    "description": "Idtek core mobile DateTimeRangeField"
+  },
+  "RN Generator InputAreaField": {
+    "prefix": "rngiaf",
+    "body": [
+      "<InputAreaField",
+      "  name=''",
+      "//  validate={CoreHelper.isValueNull} ",
+      "/>"
+    ],
+    "description": "Idtek core mobile InputAreaField"
+  },
+  "RN Generator MonthYearPickerField": {
+    "prefix": "rngmypf",
+    "body": [
+      "<MonthYearPickerField",
+      "  name=''",
+      "//  validate={CoreHelper.isValueNull} ",
+      "/>"
+    ],
+    "description": "Idtek core mobile MonthYearPickerField"
+  },
+  "RN Generator MonthYearPickerRangeField": {
+    "prefix": "rngmyprf",
+    "body": [
+      "<MonthYearPickerRangeField",
+      "  name=''",
+      "//  validate={CoreHelper.chooseStartEndDate} ",
+      "/>"
+    ],
+    "description": "Idtek core mobile MonthYearPickerRangeField"
+  },
+  "RN Generator ViewFieldArray": {
+    "prefix": "rngvfa",
+    "body": [
+      "<ViewFieldArray",
+      "  ref={c => { this.viewFieldArray = c; }}",
+      "  name=''",
+      "  buttonClearPosition='left'",
+      "  render={(name, field) => {",
+      "    return null;",
+      "  }} />"
+    ],
+    "description": "Idtek core mobile ViewFieldArray"
   }
 }

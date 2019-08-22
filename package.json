@@ -2,7 +2,7 @@
     "name": "rn-generator",
     "displayName": "RN-Generator",
     "description": "React Native Generator",
-    "version": "0.4.7",
+    "version": "0.4.10",
     "publisher": "NhanCDT",
     "icon": "icon.png",
     "engines": {
